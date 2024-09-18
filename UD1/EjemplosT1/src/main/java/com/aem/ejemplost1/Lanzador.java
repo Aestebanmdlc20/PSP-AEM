@@ -30,13 +30,15 @@ public class Lanzador {
        Process process = null;
        try {
            pb = new ProcessBuilder("java", clase, String.valueOf(n1), String.valueOf(n2));
+           
+           //Con esto redirecciono el error
            pb.redirectError(new File("Files" + File.separator + "error.log"));
            
            //Cambia el directorio de trabajo, al directorio donde se encuentran los .class
            pb.directory(new File("target" + File.separator + "classes"));
            
            process=pb.start();
-
+           
            //el proceso padre, espera a que el proceso hijo termine
            //pb.directory(new File("bin")
            
