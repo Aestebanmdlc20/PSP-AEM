@@ -6,6 +6,8 @@
 package com.aem.ejemplost1;
 
 import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
 
 /**
  *
@@ -16,13 +18,13 @@ import java.io.File;
  */
 public class Lanzador {
     
-    public static void main(String[] args){
+    public static void main(String[] args) throws IOException{
         Lanzador l = new Lanzador();
         l.lanzarSumador(1, 51);
         l.lanzarSumador(51, 100);
     }
     
-    public void lanzarSumador(int n1, int n2){
+    public void lanzarSumador(int n1, int n2) throws IOException{
        String clase="com.aem.ejemplost1.Sumador";
        ProcessBuilder pb;
        Process process = null;
@@ -43,8 +45,19 @@ public class Lanzador {
        } catch (Exception e) {
            e.printStackTrace();
        }
+       
+       //Mostrar datos generados por Sumador
+       
+       try (InputStream is = process.getInputStream()) {
+           int c;
+           while ((c = is.read()) != -1){
+               System.out.print((char) c);
+           }
+       } catch(IOException e){
+           e.printStackTrace();
+           throw e;
+       }
     }
- 
  
 }
 
