@@ -21,7 +21,7 @@ public class Sumador {
     int n1=Integer.parseInt(args[0]);
     int n2=Integer.parseInt(args[1]);
     int suma= Sumador.sumar(n1, n2);
-    System.out.println(suma);
+    System.out.println("El resultado de la suma es: "+suma);
  }
 }
 

@@ -15,22 +15,36 @@ import java.io.File;
  *
  */
 public class Lanzador {
- public void lanzarSumador(int n1, int n2){
-    String clase="Sumador";
-    ProcessBuilder pb;
-    try {
-        pb = new ProcessBuilder("java", clase, String.valueOf(n1), String.valueOf(n2));
-        pb.redirectError(new File("Files" + File.separator + "error.log"));
-        pb.start();
-    } catch (Exception e) {
-        e.printStackTrace();
+    
+    public static void main(String[] args){
+        Lanzador l = new Lanzador();
+        l.lanzarSumador(1, 51);
+        l.lanzarSumador(51, 100);
     }
- }
+    
+    public void lanzarSumador(int n1, int n2){
+       String clase="com.aem.ejemplost1.Sumador";
+       ProcessBuilder pb;
+       Process process = null;
+       try {
+           pb = new ProcessBuilder("java", clase, String.valueOf(n1), String.valueOf(n2));
+           pb.redirectError(new File("Files" + File.separator + "error.log"));
+           
+           //Cambia el directorio de trabajo, al directorio donde se encuentran los .class
+           pb.directory(new File("target" + File.separator + "classes"));
+           
+           process=pb.start();
+
+           //el proceso padre, espera a que el proceso hijo termine
+           //pb.directory(new File("bin")
+           
+           int exitValue = process.waitFor();
+           System.out.println("Exit value: " + exitValue);
+       } catch (Exception e) {
+           e.printStackTrace();
+       }
+    }
  
- public static void main(String[] args){
-    Lanzador l=new Lanzador();
-    l.lanzarSumador(1, 51);
-    l.lanzarSumador(51, 100);
- }
+ 
 }
 
