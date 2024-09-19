@@ -45,7 +45,7 @@ public class Lanzador {
            //pb.directory(new File("target" + File.separator + "classes"));
            
            process=pb.start(); //el proceso padre, espera a que el proceso hijo termine
-                     
+           
            exitValue = process.waitFor(); //Hago esperar a mi programa principal hasta que el process termine
            
            System.out.println("Exit value: " + exitValue);
