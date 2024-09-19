@@ -22,11 +22,14 @@ public class Ejercicio1 {
         LanzadorMultiplicador.
         El método lanzarMultiplicador, tendrá como parámetros de entrada los dos números que se van a multiplicar, asi como un
         tercer parámetro con el nombre del fichero de salida.
+        
         El programa java, (proceso padre), tendrá un método 1lamado LanzarMultiplicador, el cual con la clase ProcessBuilder
         ejecutará la clase java com.psp.Multiplicador.
+        
         Recuerda especificar el classpath cuando llames al proceso Java.
         También se debe redirigir la salida de error estándar a un fichero error.log (añádele al nombre del fichero
         System. currentTimeMillis() para que cada vez que se ejecute se genere un fichero diferente.
+        
         Redirige la salida estándar a un fichero cuyo nombre será el indicado por parámetro.
         Ambos ficheros deberán generarse en el directorio files del proyecto.
         Comprueba también si el proceso ha terminado o no correctamente, en el caso que termine correctamente muestra por
