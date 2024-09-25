@@ -19,7 +19,18 @@ public class Main {
         t.start();
         
         //Extendiendo de Thread
-        CrearHilos h = new CrearHilos();
-        h.start();
+        CrearHilos hilo = new CrearHilos();
+        hilo.start();
+        System.out.println("");
+        System.out.println("");
+        
+        CrearHilos h = null;
+        for(int i=0;i<3;i++){
+            h = new CrearHilos();
+            h.setName("HILO"+i);
+            h.setPriority(+1);
+            h.start();
+            System.out.println("Informacion del " + h.getName()+" : "+h.toString());
+        }
     }
 }

@@ -14,7 +14,6 @@ package com.aem.creacionhilos;
  */
 public class UsarCrearHiloRunnable {
     public static void main (String[] args){
-        Thread t = new Thread(new CrearHiloRunnable());
-        t.start();
+        
     }
 }
