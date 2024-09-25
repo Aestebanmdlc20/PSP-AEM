@@ -16,7 +16,8 @@ import java.io.IOException;
  *
  */
 public class LanzadorMultiplicador {
-       
+    
+    
     public void lanzarMultiplicador(int num1, int num2, String fSalida) throws IOException{
         
         String clase="com.aem.ejercicio1.Multiplicador";
