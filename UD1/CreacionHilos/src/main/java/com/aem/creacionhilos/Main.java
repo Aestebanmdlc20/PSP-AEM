@@ -26,15 +26,13 @@ public class Main {
         System.out.println("");
         System.out.println("");
         
-        int random=0;
         ArrayList<CrearHilos> listaH = new ArrayList<>();
         for(int i=0;i<5;i++){
             CrearHilos h = new CrearHilos();
-            random=generaNumeroAleatorio(1,8);
-            listaH.add(h);
-            listaH.get(i).setName(" Hilo"+i);
-            listaH.get(i).setPriority(random);
-            listaH.get(i).start();
+            h.setName(" Hilo"+i);
+            h.setPriority(generaNumeroAleatorio(1,8));
+            h.start();
+            listaH.add(h);            
         }
         
         for (CrearHilos hilo : listaH) {
@@ -44,7 +42,8 @@ public class Main {
                 e.printStackTrace();
             }
         }
-
+        System.out.println("");
+        System.out.println("Todos los hilos han terminado!");
     }
     
     public static int generaNumeroAleatorio(int minimo, int maximo){
