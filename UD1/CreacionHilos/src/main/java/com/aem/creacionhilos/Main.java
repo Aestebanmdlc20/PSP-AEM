@@ -5,6 +5,8 @@
 
 package com.aem.creacionhilos;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author AEM by Alejandro Esteban Martinez de la Casa
@@ -13,25 +15,40 @@ package com.aem.creacionhilos;
  *
  */
 public class Main {
-    public static void main (String[] args){
+    public static void main (String[] args) throws InterruptedException{
         //Implementando Runnable
         Thread t = new Thread(new CrearHiloRunnable());
-        t.start();
+        //t.start();
         
         //Extendiendo de Thread
-        CrearHilos hilo = new CrearHilos();
-        hilo.start();
+        //CrearHilos hilo = new CrearHilos();
+        //hilo.start();
         System.out.println("");
         System.out.println("");
         
-        CrearHilos h=null;
-        
-        for(int i=0;i<3;i++){
-            h = new CrearHilos();
-            h.setName("HILO"+i);
-            h.setPriority(+1);
-            h.start();
-            System.out.println("Informacion del " + h.getName()+" : "+h.toString());
+        int random=0;
+        ArrayList<CrearHilos> listaH = new ArrayList<>();
+        for(int i=0;i<5;i++){
+            CrearHilos h = new CrearHilos();
+            random=generaNumeroAleatorio(1,8);
+            listaH.add(h);
+            listaH.get(i).setName(" Hilo"+i);
+            listaH.get(i).setPriority(random);
+            listaH.get(i).start();
         }
+        
+        for (CrearHilos hilo : listaH) {
+            try {
+                hilo.join(); // Espera a que cada hilo termine
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+
+    }
+    
+    public static int generaNumeroAleatorio(int minimo, int maximo){
+        int num=(int)Math.floor(Math.random()*(minimo-(maximo+1))+(maximo+1));
+        return num;
     }
 }

@@ -5,6 +5,9 @@
 
 package com.aem.creacionhilos;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author AEM by Alejandro Esteban Martinez de la Casa
@@ -21,10 +24,15 @@ public class CrearHilos extends Thread { //Extiende de Thread
     
    @Override
    public void run(){ 
-       //Acciones que lleva  acabo un hilo
-       System.out.println("Hola soy" + Thread.currentThread().getName() 
-       + "\n Prioridad: " + Thread.currentThread().getPriority() 
-       + "\n ID: " + Thread.currentThread().getPriority()
-       + "\n Hilos activos: " + Thread.currentThread().activeCount());
+       try {
+           //Acciones que lleva  acabo un hilo
+           System.out.println("\n Hola soy el:" + Thread.currentThread().getName()
+                   + "\n Prioridad: " + Thread.currentThread().getPriority()
+                   + "\n ID: " + Thread.currentThread().getPriority()
+                   + "\n Hilos activos: " + Thread.currentThread().activeCount());
+           Thread.currentThread().sleep(1000);
+       } catch (InterruptedException ex) {
+           Logger.getLogger(CrearHilos.class.getName()).log(Level.SEVERE, null, ex);
+       }
    }
 }
