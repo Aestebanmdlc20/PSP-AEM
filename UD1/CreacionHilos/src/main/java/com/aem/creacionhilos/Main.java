@@ -24,7 +24,8 @@ public class Main {
         System.out.println("");
         System.out.println("");
         
-        CrearHilos h = null;
+        CrearHilos h=null;
+        
         for(int i=0;i<3;i++){
             h = new CrearHilos();
             h.setName("HILO"+i);
