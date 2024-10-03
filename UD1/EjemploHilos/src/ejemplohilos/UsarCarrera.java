@@ -13,5 +13,17 @@ package ejemplohilos;
  *
  */
 public class UsarCarrera {
+    public static void main (String[] args) throws InterruptedException{
+        Carrera conejo = new Carrera(1,"conejo");
+        Carrera liebre = new Carrera(4,"liebre");
+        Carrera tortuga = new Carrera(8,"tortuga");
 
+        conejo.start();
+        liebre.start();
+        tortuga.start();
+        
+        conejo.join();
+        liebre.join();
+        tortuga.join();
+    }
 }

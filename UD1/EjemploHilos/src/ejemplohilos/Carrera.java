@@ -23,7 +23,7 @@ public class Carrera extends Thread {
     @Override
     public void run(){
         for(int c = 1;c<=30;c++){
-            System.out.println(c+ " mt");
+            System.out.print(c + "mt");
             this.yield(); //Dice que este hilo, si hay otro con mas prioridad, ejecute el de mas prioridad antes que este
         }
         System.out.println("\n Llego a la meta " + nombre);
