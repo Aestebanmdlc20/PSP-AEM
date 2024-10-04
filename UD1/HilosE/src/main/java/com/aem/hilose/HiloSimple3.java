@@ -1,4 +1,4 @@
-
+package com.aem.hilose;
 public class HiloSimple3 extends Thread {
 	
 	private int x;

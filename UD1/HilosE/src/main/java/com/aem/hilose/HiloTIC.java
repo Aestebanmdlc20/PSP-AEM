@@ -1,7 +1,7 @@
-/**
+package com.aem.hilose;/**
  * Crear un hilo que visualice por pantalla 
  * en un bucle infinito la palabra TIC
- * Dentro del bucle, utiliza el método sleep() 
+ * Dentro del bucle, utiliza el mï¿½todo sleep() 
  * para que nos de tiempo a ver las palabras 
  * que se visualizan cuando lo ejecutemos
  * 

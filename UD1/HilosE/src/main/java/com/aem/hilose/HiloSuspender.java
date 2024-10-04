@@ -1,5 +1,6 @@
+package com.aem.hilose;
 /**
- * El uso de suspend() está obsoleto ya que podia producir interbloqueos
+ * El uso de suspend() estï¿½ obsoleto ya que podia producir interbloqueos
  * Ejemplo de suspender de forma seguro el hilo
  * @author santa
  *

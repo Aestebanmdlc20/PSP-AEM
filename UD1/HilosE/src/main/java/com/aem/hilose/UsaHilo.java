@@ -1,11 +1,11 @@
-
+package com.aem.hilose;
 public class UsaHilo {
 	
 	public static void main (String[] args) throws InterruptedException {
 		HiloSimple hs = new HiloSimple();
 		hs.start();
 				
-		System.out.println("Terminó de ejecutarse UsaHilo");
+		System.out.println("Terminï¿½ de ejecutarse UsaHilo");
 	}
 
 }

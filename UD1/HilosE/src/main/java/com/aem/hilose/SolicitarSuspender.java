@@ -1,4 +1,4 @@
-
+package com.aem.hilose;
 public class SolicitarSuspender {
 
 	private boolean suspender;

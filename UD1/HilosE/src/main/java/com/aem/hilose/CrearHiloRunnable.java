@@ -1,4 +1,4 @@
-
+package com.aem.hilose;
 /**
  * Usar este modo si necesitamos heredar de otra clase
  */

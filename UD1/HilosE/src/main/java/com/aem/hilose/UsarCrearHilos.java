@@ -1,4 +1,4 @@
-
+package com.aem.hilose;
 public class UsarCrearHilos {
 	public static void main(String[] args) throws Exception{
 		Thread.currentThread().setName("Principal");
@@ -11,7 +11,7 @@ public class UsarCrearHilos {
 			h.setPriority(i + 1); //damos prioridad
 			h.start();  //iniciar hilo
 			
-			//System.out.println("Información del "+h.getName()+" : "+h.toString());
+			//System.out.println("Informaciï¿½n del "+h.getName()+" : "+h.toString());
 		}			
 		
 		System.out.println("3 HILOS CREADOS .... ");

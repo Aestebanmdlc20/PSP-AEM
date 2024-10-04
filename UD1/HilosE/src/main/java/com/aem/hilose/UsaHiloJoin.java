@@ -1,4 +1,4 @@
-
+package com.aem.hilose;
 public class UsaHiloJoin {
 	
 	public static void main (String[] args) throws InterruptedException {
@@ -6,7 +6,7 @@ public class UsaHiloJoin {
 		hs.start();
 		hs.join();
 		
-		System.out.println("Terminó de ejecutarse UsaHiloJoin");
+		System.out.println("Terminï¿½ de ejecutarse UsaHiloJoin");
 	}
 
 }

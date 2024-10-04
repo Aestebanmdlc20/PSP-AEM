@@ -1,4 +1,4 @@
-
+package com.aem.hilose;
 public class UsaHiloIsAlive {
 	
 	public static void main (String[] args) throws InterruptedException {
@@ -8,7 +8,7 @@ public class UsaHiloIsAlive {
 			System.out.println("Sigue vivo...");
 		}
 		
-		System.out.println("Terminó de ejecutarse UsaHiloIsAlive");
+		System.out.println("Terminï¿½ de ejecutarse UsaHiloIsAlive");
 	}
 
 }
