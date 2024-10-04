@@ -1,4 +1,9 @@
-package com.aem.hilose;/**
+package com.aem.hilose;
+
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+/**
  * Crear un hilo que visualice por pantalla 
  * en un bucle infinito la palabra TIC
  * Dentro del bucle, utiliza el m�todo sleep() 
@@ -9,16 +14,25 @@ package com.aem.hilose;/**
  *
  */
 public class HiloTIC extends Thread {
-	
+    protected static boolean ticTurno = true; 
 	@Override
 	public void run() {
 		while(true) {
-			System.out.println("TIC");
-			try {
-				this.sleep(500);
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
+                    sincronizarTIC(this);
 		}
 	}
+        
+        public synchronized void sincronizarTIC(HiloTIC tic){
+            while (!ticTurno) {  
+                try {
+                    HiloTIC.class.wait();
+                } catch (InterruptedException ex) {
+                    Logger.getLogger(HiloTIC.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+            System.out.println("TIC");
+            ticTurno = false;  
+            HiloTIC.class.notifyAll();
+        }
+        
 }
