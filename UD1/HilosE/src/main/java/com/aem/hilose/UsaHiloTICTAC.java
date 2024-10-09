@@ -6,15 +6,15 @@ package com.aem.hilose;/**
  */
 public class UsaHiloTICTAC {
 	
-	public static void main (String[] args) {
-		//Creo los hilos
-		HiloTIC hTIC = new HiloTIC();
-		HiloTAC hTAC = new HiloTAC();
-		
-		//los arranco
-		hTIC.start();
-		hTAC.start();
-		
-	}
-
+    public static void main (String[] args) {
+        TicTac tictac = new TicTac();
+        // Creo los hilos
+        HiloTIC hTIC = new HiloTIC(tictac);
+        HiloTAC hTAC = new HiloTAC(tictac);
+        
+        // Los arranco
+        hTIC.start();
+        hTAC.start();
+        
+    }
 }

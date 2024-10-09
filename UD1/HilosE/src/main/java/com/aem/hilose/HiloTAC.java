@@ -16,33 +16,21 @@ import java.util.logging.Logger;
  *
  */
 public class HiloTAC extends Thread {
-	
-	@Override
-	public void run() {
-		while(true) {
-                    sincronizarTAC();
-                }    
-	}
-        
-        public synchronized void sincronizarTAC() {
-        while (!ticTurno) {
+    TicTac tictac;
+    public HiloTAC(TicTac tictac){
+        this.tictac=tictac;
+    }
+    @Override
+    public void run() {
+        while(true) {
             try {
-                this.wait(); // wait on the current instance
+                System.out.println("TAC");
+                tictac.avisar();
+                tictac.esperar();
+                this.sleep(500);
             } catch (InterruptedException ex) {
                 Logger.getLogger(HiloTAC.class.getName()).log(Level.SEVERE, null, ex);
-                // Handle interruption appropriately, maybe break the loop
             }
-        }
-        System.out.println("TAC");
-        ticTurno = false; // Set to false, signaling it's not this thread's turn
-        notifyAll(); // Notify all waiting threads
-    }
-
-    // Additional method to allow HiloTIC to notify
-        public static synchronized void setTicTurno(boolean turno) {
-            ticTurno = turno;
-            if (turno) {
-                HiloTAC.class.notifyAll(); // Notify HiloTAC when it's its turn
-            }
-        }
+        }    
+    }       
 }

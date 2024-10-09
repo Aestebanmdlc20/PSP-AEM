@@ -14,25 +14,24 @@ import java.util.logging.Logger;
  *
  */
 public class HiloTIC extends Thread {
+    TicTac tictac;
     protected static boolean ticTurno = true; 
+    public HiloTIC(TicTac tictac) {
+		this.tictac = tictac;
+    }
 	@Override
-	public void run() {
-		while(true) {
-                    sincronizarTIC(this);
-		}
-	}
-        
-        public synchronized void sincronizarTIC(HiloTIC tic){
-            while (!ticTurno) {  
-                try {
-                    HiloTIC.class.wait();
-                } catch (InterruptedException ex) {
-                    Logger.getLogger(HiloTIC.class.getName()).log(Level.SEVERE, null, ex);
-                }
+    public void run() {
+        while(true) {
+            try {
+                System.out.println("TIC");
+                tictac.avisar();
+                tictac.esperar();
+
+                this.sleep(500);
+            } catch (InterruptedException ex) {
+                Logger.getLogger(HiloTIC.class.getName()).log(Level.SEVERE, null, ex);
             }
-            System.out.println("TIC");
-            ticTurno = false;  
-            HiloTIC.class.notifyAll();
         }
+    }
         
 }
