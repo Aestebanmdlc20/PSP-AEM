@@ -10,8 +10,12 @@ public class Lectura {
     private ArrayList<HiloCuentaPalabras> hilos = new ArrayList<>();
 
     public void leerFichero(String fichero) {
-        try (BufferedReader br = new BufferedReader(new FileReader(fichero))) {
+        BufferedReader br = null;
+        FileReader fr = null;
+        try {
             String linea;
+            fr = new FileReader(fichero);
+            br = new BufferedReader(fr);
             while ((linea = br.readLine()) != null) {
                 HiloCuentaPalabras hilo = new HiloCuentaPalabras(linea);
                 hilos.add(hilo);
@@ -19,6 +23,17 @@ public class Lectura {
             }
         } catch (IOException e) {
             e.printStackTrace();
+        } finally {
+            try {
+                if (br != null) {
+                    br.close();
+                }
+                if (fr != null) {
+                    fr.close();
+                }
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
         }
     }
 
