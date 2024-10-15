@@ -11,7 +11,7 @@ public class HiloCuentaPalabras extends Thread {
 
     @Override
     public void run() {
-        String[] palabras = linea.split("\\s+");
+        String[] palabras = linea.split("\\s+"); // el \\s+ es para uno o más espacios en blanco
         contadorPalabras = palabras.length;
     }
 
