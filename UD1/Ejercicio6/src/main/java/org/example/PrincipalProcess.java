@@ -43,13 +43,33 @@ public class PrincipalProcess {
             }
         }
 
-        try (BufferedWriter escritor = new BufferedWriter(new FileWriter("resultado_busqueda.txt"))) {
+        // Escribimos los resultados en el archivo resultado_busqueda.txt
+        BufferedWriter escritor = null;
+        FileWriter fileWriter = null;
+        try  {
+            fileWriter = new FileWriter("resultado_busqueda.txt");
+            escritor = new BufferedWriter(fileWriter);
             for (WordFileReader lector : lectores) {
                 FileData datosArchivo = lector.getDatosArchivo();
                 escritor.write(datosArchivo.getNumeroOcurrencias() + " ocurrencias en el fichero " + datosArchivo.getNombreArchivo() + "\n");
             }
         } catch (IOException e) {
             e.printStackTrace();
+        } finally {
+            if (escritor != null) {
+                try {
+                    escritor.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+            if (fileWriter != null) {
+                try {
+                    fileWriter.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
         }
     }
 
