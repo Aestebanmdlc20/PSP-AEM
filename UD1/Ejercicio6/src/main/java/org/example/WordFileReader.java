@@ -17,8 +17,8 @@ public class WordFileReader implements Runnable {
 
     @Override
     public void run() {
-        BufferedReader lector = null;
         FileReader fileReader = null;
+        BufferedReader lector = null;
         try {
             fileReader = new FileReader(rutaArchivo);
             lector = new BufferedReader(fileReader);
@@ -26,9 +26,10 @@ public class WordFileReader implements Runnable {
             int numeroLinea = 0;
             while ((linea = lector.readLine()) != null) {
                 numeroLinea++;
-                String[] palabras = linea.split("\\W+"); // Para dividir en caracteres no alfanuméricos
+                String[] palabras = linea.split(" ");
                 for (String palabraActual : palabras) {
-                    if (palabraActual.equals(palabra)) {
+                    palabraActual = palabraActual.replaceAll("[^a-zA-Z0-9]", ""); // Elimina caracteres no alfanuméricos
+                    if (!palabraActual.isEmpty() && palabraActual.equalsIgnoreCase(palabra)) {
                         datosArchivo.agregarOcurrencia(numeroLinea, linea);
                     }
                 }

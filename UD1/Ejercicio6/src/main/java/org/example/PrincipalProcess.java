@@ -16,7 +16,7 @@ public class PrincipalProcess {
         this.palabra = palabra;
     }
 
-    public void procesarArchivos() {
+    public void procesarArchivos() throws IOException {
         File directorio = new File(rutaDirectorio);
         File[] archivos = directorio.listFiles((dir, nombre) -> nombre.endsWith(".txt")); // Con la expresion lambda verifico que solo liste archivos .txt y me ahorra codigo
         if (archivos == null) {
@@ -56,7 +56,8 @@ public class PrincipalProcess {
                 }
             }
         } catch (IOException e) {
-            e.printStackTrace();
+             e.printStackTrace();
+             throw e;
         } finally {
             if (escritor != null) {
                 try {
@@ -75,7 +76,7 @@ public class PrincipalProcess {
         }
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         if (args.length != 2) {
             System.out.println("Uso: java Main <directorio> <palabra>");
             return;
