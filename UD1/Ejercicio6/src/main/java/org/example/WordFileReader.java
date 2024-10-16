@@ -26,7 +26,7 @@ public class WordFileReader implements Runnable {
             int numeroLinea = 0;
             while ((linea = lector.readLine()) != null) {
                 numeroLinea++;
-                String[] palabras = linea.split("\\W+");
+                String[] palabras = linea.split("\\W+"); // Para dividir en caracteres no alfanuméricos
                 for (String palabraActual : palabras) {
                     if (palabraActual.equals(palabra)) {
                         datosArchivo.agregarOcurrencia(numeroLinea, linea);

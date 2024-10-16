@@ -1,4 +1,4 @@
-1680 ocurrencias en el fichero C:\Users\b15-03m\Desktop\PSP-AEM\UD1\Ejercicio6\hola2.txt
-1680 ocurrencias en el fichero C:\Users\b15-03m\Desktop\PSP-AEM\UD1\Ejercicio6\otra prueba.txt
-1680 ocurrencias en el fichero C:\Users\b15-03m\Desktop\PSP-AEM\UD1\Ejercicio6\prueba.txt
-1680 ocurrencias en el fichero C:\Users\b15-03m\Desktop\PSP-AEM\UD1\Ejercicio6\psp.txt
+1680 ocurrencias en el fichero C:\Users\b15-03m\Desktop\PSP-AEM\UD1\Ejercicio6\.\hola2.txt
+1680 ocurrencias en el fichero C:\Users\b15-03m\Desktop\PSP-AEM\UD1\Ejercicio6\.\otra prueba.txt
+1680 ocurrencias en el fichero C:\Users\b15-03m\Desktop\PSP-AEM\UD1\Ejercicio6\.\prueba.txt
+1680 ocurrencias en el fichero C:\Users\b15-03m\Desktop\PSP-AEM\UD1\Ejercicio6\.\psp.txt
