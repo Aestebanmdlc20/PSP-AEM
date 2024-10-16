@@ -1,5 +1,3 @@
-1680 ocurrencias en el fichero C:\Users\b15-03m\Desktop\PSP-AEM\UD1\Ejercicio6\.\hola2.txt
-1680 ocurrencias en el fichero C:\Users\b15-03m\Desktop\PSP-AEM\UD1\Ejercicio6\.\otra prueba.txt
-1680 ocurrencias en el fichero C:\Users\b15-03m\Desktop\PSP-AEM\UD1\Ejercicio6\.\prueba.txt
-1680 ocurrencias en el fichero C:\Users\b15-03m\Desktop\PSP-AEM\UD1\Ejercicio6\.\psp.txt
-0 ocurrencias en el fichero C:\Users\b15-03m\Desktop\PSP-AEM\UD1\Ejercicio6\.\resultado_busqueda.txt
+6 ocurrencias en el fichero C:\Users\b15-03m\Desktop\PSP-AEM\UD1\Ejercicio6\.\directory\about_BeforeEach_AfterEach.help.txt
+4 ocurrencias en el fichero C:\Users\b15-03m\Desktop\PSP-AEM\UD1\Ejercicio6\.\directory\about_Pester.help.txt
+1 ocurrencias en el fichero C:\Users\b15-03m\Desktop\PSP-AEM\UD1\Ejercicio6\.\directory\about_TestDrive.help.txt

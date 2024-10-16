@@ -18,7 +18,7 @@ public class PrincipalProcess {
 
     public void procesarArchivos() {
         File directorio = new File(rutaDirectorio);
-        File[] archivos = directorio.listFiles((dir, nombre) -> nombre.endsWith(".txt")); // Con la expresion lambda verifico que solo liste archivos .txt
+        File[] archivos = directorio.listFiles((dir, nombre) -> nombre.endsWith(".txt")); // Con la expresion lambda verifico que solo liste archivos .txt y me ahorra codigo
         if (archivos == null) {
             System.out.println("No se encontraron archivos .txt en el directorio especificado.");
             return;
@@ -51,7 +51,9 @@ public class PrincipalProcess {
             escritor = new BufferedWriter(fileWriter);
             for (WordFileReader lector : lectores) {
                 FileData datosArchivo = lector.getDatosArchivo();
-                escritor.write(datosArchivo.getNumeroOcurrencias() + " ocurrencias en el fichero " + datosArchivo.getNombreArchivo() + "\n");
+                if (datosArchivo.getNumeroOcurrencias() > 0) {
+                    escritor.write(datosArchivo.getNumeroOcurrencias() + " ocurrencias en el fichero " + datosArchivo.getNombreArchivo() + "\n");
+                }
             }
         } catch (IOException e) {
             e.printStackTrace();

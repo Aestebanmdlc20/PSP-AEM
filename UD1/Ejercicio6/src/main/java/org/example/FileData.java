@@ -17,7 +17,7 @@ public class FileData {
         this.numerosLinea = new ArrayList<>();
         this.contenidoLineas = new ArrayList<>();
     }
-
+    
     public void agregarOcurrencia(int numeroLinea, String contenidoLinea) {
         this.numeroOcurrencias++;
         this.numerosLinea.add(numeroLinea);
