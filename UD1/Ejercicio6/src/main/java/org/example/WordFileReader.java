@@ -17,7 +17,11 @@ public class WordFileReader implements Runnable {
 
     @Override
     public void run() {
-        try (BufferedReader lector = new BufferedReader(new FileReader(rutaArchivo))) {
+        BufferedReader lector = null;
+        FileReader fileReader = null;
+        try {
+            fileReader = new FileReader(rutaArchivo);
+            lector = new BufferedReader(fileReader);
             String linea;
             int numeroLinea = 0;
             while ((linea = lector.readLine()) != null) {
@@ -31,6 +35,21 @@ public class WordFileReader implements Runnable {
             }
         } catch (IOException e) {
             e.printStackTrace();
+        } finally {
+            if (lector != null) {
+                try {
+                    lector.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+            if (fileReader != null) {
+                try {
+                    fileReader.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
         }
     }
 
