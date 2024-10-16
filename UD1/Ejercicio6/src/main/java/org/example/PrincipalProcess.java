@@ -18,7 +18,7 @@ public class PrincipalProcess {
 
     public void procesarArchivos() {
         File directorio = new File(rutaDirectorio);
-        File[] archivos = directorio.listFiles((dir, nombre) -> nombre.endsWith(".txt"));
+        File[] archivos = directorio.listFiles((dir, nombre) -> nombre.endsWith(".txt")); // Con la expresion lambda verifico que solo liste archivos .txt
         if (archivos == null) {
             System.out.println("No se encontraron archivos .txt en el directorio especificado.");
             return;
