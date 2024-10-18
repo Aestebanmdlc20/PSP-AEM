@@ -20,6 +20,6 @@ public class UsaHiloTICTAC {
 
         hTIC.interrupt();
         hTAC.interrupt();
-        
+
     }
 }

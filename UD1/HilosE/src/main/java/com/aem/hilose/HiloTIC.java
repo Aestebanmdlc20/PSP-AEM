@@ -6,7 +6,6 @@ import java.util.logging.Logger;
 
 public class HiloTIC extends Thread {
     TicTac tictac;
-    protected static boolean ticTurno = true;
     public HiloTIC(TicTac tictac) {
         this.tictac = tictac;
     }
