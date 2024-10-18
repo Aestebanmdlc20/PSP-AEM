@@ -19,7 +19,7 @@ public class HiloTAC extends Thread {
                 this.sleep(500);
             } catch (InterruptedException ex) {
                 Logger.getLogger(HiloTAC.class.getName()).log(Level.SEVERE, null, ex);
-                Thread.currentThread().interrupt(); // Vuelve a interrumpir el hilo
+                Thread.currentThread().interrupt();
             }
         }
     }
