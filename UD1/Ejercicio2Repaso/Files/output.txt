@@ -1,0 +1,15 @@
+ El volumen de la unidad C es SYSTEM
+ El n£mero de serie del volumen es: E67B-B801
+
+ Directorio de C:\Users\Alejandro\Documents\GitHub\PSP-AEM\UD1\Ejercicio2Repaso
+
+21/10/2024  20:07    <DIR>          .
+21/10/2024  20:07    <DIR>          ..
+21/10/2024  20:01               490 .gitignore
+21/10/2024  20:08    <DIR>          .idea
+21/10/2024  20:09    <DIR>          Files
+21/10/2024  20:01               657 pom.xml
+21/10/2024  20:01    <DIR>          src
+21/10/2024  20:06    <DIR>          target
+               2 archivos          1.147 bytes
+               6 dirs  592.821.506.048 bytes libres

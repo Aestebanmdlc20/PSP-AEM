@@ -38,7 +38,7 @@ public class LanzadorMultiplicador {
         int exitValue=0;
         
         try{
-            String classPath = ".;./taget/classes";
+            String classPath = ".;./target/classes";
             
             pb=new ProcessBuilder("java","-cp",classPath,clase,String.valueOf(num1),String.valueOf(num2));
             
