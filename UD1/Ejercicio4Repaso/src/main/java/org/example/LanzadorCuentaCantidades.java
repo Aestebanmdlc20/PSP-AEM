@@ -17,9 +17,9 @@ public class LanzadorCuentaCantidades {
 
         String[] ficheros = {"./informatica.txt", "./administracion.txt", "./eso.txt", "./bachillerato.txt", "./comercio.txt"};
 
-        for (String fichero : ficheros) {
+        for (String fichero : ficheros) { // Iniciar procesos hijos
             pb = new ProcessBuilder("java", "-cp", classPath, clase, fichero);
-            pb.redirectOutput(new File(".\\FilesGen\\" + new File(fichero).getName() + ".res"));
+            //pb.redirectOutput(new File(".\\FilesGen\\" + fichero + ".res"));
             pb.redirectError(new File("errores.txt"));
             proceso = pb.start();
             try {
@@ -27,9 +27,9 @@ public class LanzadorCuentaCantidades {
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
-        } // Iniciar procesos hijos
+        }
 
-        for (String fichero : ficheros) {
+        for (String fichero : ficheros) { // Leer resultados de los ficheros
             try (FileReader ficheroIn = new FileReader(new File(".\\FilesGen\\" + fichero + ".res"));
                  BufferedReader br = new BufferedReader(ficheroIn)) {
 
@@ -42,7 +42,7 @@ public class LanzadorCuentaCantidades {
                 ex.printStackTrace();
                 throw ex;
             }
-        } // Leer resultados de los ficheros
+        }
 
         try (FileWriter ficheroOut = new FileWriter(new File(".\\resultado_final.txt"));
              BufferedWriter bw = new BufferedWriter(ficheroOut)) {
