@@ -1,0 +1,3 @@
+6 ocurrencias en el fichero C:\Users\Alejandro\Documents\GitHub\PSP-AEM\UD1\Ejercicio6Repaso\.\directory\about_BeforeEach_AfterEach.help.txt
+4 ocurrencias en el fichero C:\Users\Alejandro\Documents\GitHub\PSP-AEM\UD1\Ejercicio6Repaso\.\directory\about_Pester.help.txt
+1 ocurrencias en el fichero C:\Users\Alejandro\Documents\GitHub\PSP-AEM\UD1\Ejercicio6Repaso\.\directory\about_TestDrive.help.txt

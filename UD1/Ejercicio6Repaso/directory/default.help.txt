@@ -1,0 +1,113 @@
+﻿
+
+TEMA
+    Sistema de ayuda de Windows PowerShell
+
+DESCRIPCIÓN BREVE
+    Muestra ayuda acerca de los cmdlets y los conceptos de Windows PowerShell. 
+
+DESCRIPCIÓN LARGA
+    En la ayuda de Windows PowerShell se describen los cmdlets, las funciones,
+    los scripts y los módulos de Windows PowerShell y se explican conceptos,
+    incluidos los elementos del lenguaje Windows PowerShell.
+
+    Windows PowerShell no incluye archivos de ayuda, pero puede leer los
+    temas de ayuda en línea o usar el cmdlet Update-Help para descargar archivos de ayuda
+    en el equipo y, a continuación, usar el cmdlet Get-Help para mostrar los temas
+    de ayuda en la línea de comandos.
+
+    También puede usar el cmdlet Update-Help para descargar archivos de ayuda
+    actualizados a medida que se publiquen, para que el contenido de ayuda local nunca se quede obsoleto. 
+
+    Sin archivos de ayuda, Get-Help obtiene ayuda generada automáticamente para los cmdlets, 
+    las funciones y los scripts.
+
+
+  AYUDA EN LÍNEA    
+    Encontrará ayuda en línea para Windows PowerShell en la Biblioteca de TechNet,
+    a partir de http://go.microsoft.com/fwlink/?LinkID=108518. 
+
+    Para abrir la ayuda en línea de cualquier cmdlet o función, escriba:
+
+        Get-Help <nombreDelCmdlet> -Online    
+
+  UPDATE-HELP
+    Para descargar e instalar los archivos de ayuda en el equipo:
+
+       1. Inicie Windows PowerShell con la opción "Ejecutar como administrador".
+       2. Escriba:
+
+          Update-Help
+
+    Una vez instalados los archivos de ayuda, puede usar el cmdlet Get-Help para
+    mostrar los temas de ayuda. También puede usar el cmdlet Update-Help para
+    descargar archivos de ayuda actualizados, de modo que los archivos de
+    ayuda locales siempre estén actualizados.
+    
+    Para obtener más información acerca del cmdlet Update-Help, escriba:
+
+       Get-Help Update-Help -Online
+
+    o vaya a: http://go.microsoft.com/fwlink/?LinkID=210614
+
+
+  GET-HELP
+    El cmdlet Get-Help muestra ayuda en la línea de comandos del contenido
+    de los archivos de ayuda del equipo. Sin archivos de ayuda, Get-Help muestra ayuda
+    básica acerca de los cmdlets y las funciones. También puede usar Get-Help para mostrar
+    ayuda en línea sobre los cmdlets y las funciones.
+
+    Para obtener ayuda sobre un cmdlet, escriba:
+
+        Get-Help <nombreDelCmdlet>
+    
+    Para obtener ayuda en línea, escriba:
+   
+        Get-Help <nombreDelCmdlet> -Online    
+
+    Los títulos de los temas conceptuales empiezan con "About_".
+    Para obtener ayuda sobre un concepto o elemento del lenguaje, escriba:
+
+        Get-Help About_ <nombreDelTema>
+
+    Para buscar una palabra o frase en todos los archivos de ayuda, escriba:
+
+        Get-Help <términoDeBúsqueda>
+
+    Para obtener más información acerca del cmdlet Get-Help, escriba:
+
+        Get-Help Get-Help -Online
+
+    o vaya a: http://go.microsoft.com/fwlink/?LinkID=113316
+
+
+  EJEMPLOS:
+      Save-Help              : descarga archivos de ayuda de Internet y los guarda
+                               en un recurso compartido de archivos.
+      Update-Help            : descarga e instala archivos de ayuda de
+                               Internet en un recurso compartido de archivos.
+      Get-Help Get-Process   : muestra ayuda acerca del cmdlet Get-Process.   
+      Get-Help Get-Process -Online
+                             : abre la ayuda en línea del cmdlet Get-Process.                            
+      Help Get-Process       : muestra ayuda acerca de Get-Process, página por página.
+      Get-Process -?         : muestra ayuda acerca del cmdlet Get-Process.      
+      Get-Help About_Modules : muestra ayuda acerca de los módulos de Windows PowerShell.
+      Get-Help remoting      : busca la palabra "remoting" en los temas de ayuda.
+
+  VÉASE TAMBIÉN:
+      about_Updatable_Help
+      Get-Help
+      Save-Help
+      Update-Help
+
+
+
+
+
+
+
+
+
+
+
+
