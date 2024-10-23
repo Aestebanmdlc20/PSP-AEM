@@ -13,7 +13,7 @@ public class Testigo {
             }
         }
     }
-
+    
     public synchronized void pasarTestigo(int dorsal){
         this.turnoActual =dorsal+1;
         if(this.turnoActual > 4){

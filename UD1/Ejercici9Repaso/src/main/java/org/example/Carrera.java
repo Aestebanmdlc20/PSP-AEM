@@ -5,7 +5,7 @@ package org.example;
 public class Carrera {
 
     private Testigo testigo=new Testigo();
-
+    
     public void iniciarCarrera(){
         for(int i=0;i<=4;i++){
             new Thread(new Atleta(i,testigo)).start();
