@@ -5,10 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="19131f4c-b9e3-4aac-a2d4-1302c52cabe5" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Carrera.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Carrera.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Testigo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Testigo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Ejercicio10Repaso/.idea/material_theme_project_new.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Ejercicio10Repaso/.idea/material_theme_project_new.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Ejercicio10Repaso/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Ejercicio10Repaso/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Ejercicio8Singleton/.idea/material_theme_project_new.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Ejercicio8Singleton/.idea/material_theme_project_new.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Ejercicio8Singleton/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Ejercicio8Singleton/.idea/misc.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +45,7 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/b15-03m/Desktop/PSP-AEM/UD1/Ejercici9Repaso&quot;,
     &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/Alejandro/Documents/GitHub/PSP-AEM/UD1/Ejercici9Repaso/src/main/java/org/example/Main.java&quot;
   }
 }</component>
