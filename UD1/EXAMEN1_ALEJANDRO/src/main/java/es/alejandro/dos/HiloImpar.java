@@ -1,11 +1,6 @@
 package es.alejandro.dos;
 
 public class HiloImpar implements Runnable{
-    Secuenciador secuenciador;
-
-    public HiloImpar(Secuenciador secuenciador) {
-        this.secuenciador = secuenciador;
-    }
 
     /**
      * Metodo run que se encarga de cambiar el estado del hilo
@@ -16,13 +11,11 @@ public class HiloImpar implements Runnable{
     public void run() {
         while(!Thread.currentThread().isInterrupted()){
             try {
-                secuenciador.siguiente();
-                secuenciador.esperarPar();
+                Secuenciador.getInstance().esperarImpar();
                 Thread.sleep(1000);
             } catch (InterruptedException e) {
-                throw new RuntimeException("Hilo interrumpido");
+                Thread.currentThread().interrupt();
             }
-            System.out.println("Contado es impar: " + secuenciador.getContador());
         }
     }
 }

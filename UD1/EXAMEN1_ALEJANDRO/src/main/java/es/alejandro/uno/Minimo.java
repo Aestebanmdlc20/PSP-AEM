@@ -9,7 +9,7 @@ public class Minimo {
      * @param num2 Segundo numero entero a comparar
      */
 
-    public static void calcularMinimo(int num1, int num2){
+    public void calcularMinimo(int num1, int num2){
         if(num1 < num2){
             System.out.println("El numero: " + num1 +" es menor que el numero: " + num2);
         } else if(num1 > num2) {
@@ -25,13 +25,13 @@ public class Minimo {
      * @param args numeros que se van a pasar al metodo calcularMinimo
      */
     public static void main (String[] args){
-        if(args.length < 2){
+        if(args.length != 2){
             throw new IllegalArgumentException("Hay menos de dos argumentos!");
         }
         int num1 = Integer.parseInt(args[0]);
         int num2 = Integer.parseInt(args[1]);
-
-        calcularMinimo(num1,num2);
+        Minimo minimo = new Minimo();
+        minimo.calcularMinimo(num1,num2);
 
     }
 

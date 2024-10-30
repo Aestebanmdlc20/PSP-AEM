@@ -15,7 +15,7 @@ public class ProcessManager {
      * Redirige la salida de error a ./files/error_alejandro.txt
      */
 
-    public static void lanzarMinimo(int num1, int num2){
+    public static void lanzarMinimo(int num1, int num2) throws IOException, InterruptedException {
 
         // String para el classPath y class
         String classPath=".;./target/classes";
@@ -33,9 +33,9 @@ public class ProcessManager {
             exitValue = minimo.waitFor();
 
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            throw e;
         } catch (InterruptedException e) {
-            throw new RuntimeException(e);
+            throw e;
         }
     }
 
@@ -45,8 +45,8 @@ public class ProcessManager {
      * @param args numeros que se van a pasar al metodo lanzarMinimo
      */
 
-    public static void main(String[] args){
-        if(args.length < 2){
+    public static void main(String[] args) throws IOException, InterruptedException {
+        if(args.length != 2){
             throw new IllegalArgumentException("Hay menos de dos argumentos!");
         }
 

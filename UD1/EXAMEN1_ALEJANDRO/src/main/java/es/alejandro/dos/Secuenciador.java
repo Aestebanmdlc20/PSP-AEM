@@ -45,24 +45,30 @@ public class Secuenciador {
     }
 
     /**
-     * Metodo que hace hace esperar al hilo por el que es invocado hasta que se le notifique
+     * Metodo que hace esperar al hilo por el que es invocado hasta que se le notifique
      * Se empleará para el hiloPar
      */
-    public synchronized void esperarPar(){
+    public synchronized void esperarPar() throws InterruptedException {
         try {
-            wait();
+            if(this.contador%2!=0){
+                System.out.println("Contador es impar: " + this.contador);
+                wait();
+            }
         } catch (InterruptedException e) {
-            throw new RuntimeException("Hilo interrumpido");
+            throw e;
         }
     }
     /**
-     * Metodo que hace hace esperar al hilo por el que es invocado hasta que se le notifique
+     * Metodo que hace esperar al hilo por el que es invocado hasta que se le notifique
      * Se empleadrá para el hiloImpar
      */
 
     public synchronized void esperarImpar() {
         try {
-            wait();
+            if(this.contador%2==0){
+                System.out.println("Contador es par: " + this.contador);
+                wait();
+            }
         } catch (InterruptedException e) {
             throw new RuntimeException("Hilo interrumpido");
         }
