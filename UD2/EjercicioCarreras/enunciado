@@ -1,0 +1,23 @@
+Realizar un programa que se encargue de realizar una carrera de coches, en el que
+intervienen las siguientes clases:
+
+• Carrera: Al crearse, se calculará la distancia que hay que recorrer para ganar la
+carrera, siendo un número aleatorio entre 1 y 1000 metros. La carrera termina
+cuando un coche llegue a la meta.
+
+• Coche: Cada coche al crearse, registra su nombre y el número de metros que avanza
+en cada iteración, el cual será un numero aleatorio entre 1 y 50 metros. Se ejecutará
+mientras la carrera no haya terminado. Por cada iteración, le dirá a Carrera el número
+de metros totales que lleva, y Carrera deberá comprobar si el coche en cuestión ha
+llegado a meta y por tanto ha ganado en cuyo caso mostrará por consola un mensaje
+del tipo “El coche XXX ha ganado la carrera ¡¡¡¡”, si por contrario no ha ganado,
+deberá mostrarse por consola, el % de la distancia recorrida. El coche debe llevar
+un contador interno de la distancia que lleva recorrida. Por cada vez que corre en la
+carrera, duerme por 1 segundo.
+
+• Principal: Creará los coches que participan en la carrera. En concreto se crearán 3
+coches con nombres: Opel, Ford y Seat.
+Una vez que los coches hayan finalizado, se debe mostrar el pódium, es decir, que
+coche fue el más rápido y por tanto ganará el oro, cual fue el segundo y ganará la
+plata y cuál fue el último siendo el bronce, en función de la distancia total que cada
+coche recorriera.
