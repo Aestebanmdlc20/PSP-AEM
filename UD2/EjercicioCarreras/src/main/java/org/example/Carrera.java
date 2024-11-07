@@ -1,35 +1,28 @@
 package org.example;
 
-
-/**
- * • Carrera: Al crearse, se calculará la distancia que hay que recorrer para ganar la
- * carrera, siendo un número aleatorio entre 1 y 1000 metros. La carrera termina
- * cuando un coche llegue a la meta.
- *
- */
-
 public class Carrera {
     private int distancia;
-    private int distanciaRecorrida;
+    private boolean finalizada;
 
     public Carrera() {
-        this.distancia = (int) Math.random()*1000 + 1;
+        this.distancia = (int) (Math.random() * 1000) + 1;
+        finalizada = false;
     }
 
     public int getDistancia() {
         return distancia;
     }
 
-    public void setDistancia(int distancia) {
-    this.distancia = distancia;
+    public synchronized boolean isFinalizada() {
+        return finalizada;
     }
 
-    public int getDistanciaRecorrida() {
-        return distanciaRecorrida;
+    public synchronized void avanzar(Coche coche){
+        int porcentaje = (int) (((double) coche.getDistanciaRecorrida() * 100) / this.distancia);
+        System.out.println("El coche " + coche.getNombre() + " ha recorrido el " + porcentaje + "% de la carrera");
+        if (coche.getDistanciaRecorrida() >= this.distancia) {
+            System.out.println("El coche " + coche.getNombre() + " ha ganado la carrera !!!");
+            this.finalizada = true;
+        }
     }
-
-    public void setDistanciaRecorrida(int distanciaRecorrida) {
-        this.distanciaRecorrida = distanciaRecorrida;
-    }
-
 }
