@@ -3,47 +3,31 @@ package org.example;
 class Filosofo implements Runnable {
 
     private String idFilosofo;
-    private int tenedorInstruccion;
     Object tenedorDerecho;
     Object tenedorIzquierdo;
 
-    public Filosofo(String idFilosofo, Object tenedorDerecho, Object tenedorIzquierdo, int tenedorInstruccion) {
+    public Filosofo(String idFilosofo, Object tenedorDerecho, Object tenedorIzquierdo) {
         this.idFilosofo = idFilosofo;
         this.tenedorDerecho = tenedorDerecho;
         this.tenedorIzquierdo = tenedorIzquierdo;
-        this.tenedorInstruccion = tenedorInstruccion;
     }
 
     public void run() {
         while (true) {
             System.out.println(idFilosofo + " Tiene ganas de comer");
-            if (this.tenedorInstruccion == 1) {
-                synchronized (tenedorDerecho) {
-                    tomarTenedor("derecho");
-                    synchronized (tenedorIzquierdo) {
-                        tomarTenedor("izquierdo");
-                        comer();
-                        this.tenedorInstruccion = 0;
-                    }
-                }
-                pensar();
-            } else if (this.tenedorInstruccion == 2) {
+            synchronized (tenedorDerecho) {
                 synchronized (tenedorIzquierdo) {
-                    tomarTenedor("izquierdo");
-                    synchronized (tenedorDerecho) {
-                        tomarTenedor("derecho");
-                        comer();
-                        this.tenedorInstruccion = 0;
-                    }
+                    cogerTenedor("derecho e izquierdo");
+                    comer();
                 }
-                pensar();
             }
+            pensar();
         }
     }
 
     public void pensar() {
         try {
-            System.out.println(idFilosofo + " está pensando");
+            System.out.println(idFilosofo + " esta pensando");
             int pausa = (int) (Math.random() * 3000);
             Thread.sleep(pausa);
         } catch (InterruptedException ex) {
@@ -51,7 +35,7 @@ class Filosofo implements Runnable {
         }
     }
 
-    public void tomarTenedor(String tenedor) {
+    public void cogerTenedor(String tenedor) {
         try {
             System.out.println(idFilosofo + " coge su tenedor " + tenedor);
             int pausa = (int) (Math.random() * 3000);
@@ -62,8 +46,8 @@ class Filosofo implements Runnable {
     }
 
     public void comer() {
-        try{
-            System.out.println(idFilosofo + " está comiendo");
+        try {
+            System.out.println(idFilosofo + " esta comiendo");
             int pausa = (int) (Math.random() * 3000);
             Thread.sleep(pausa);
             System.out.println(idFilosofo + " deja de comer");
