@@ -3,7 +3,7 @@ package org.example;
 public class Main {
     public static void main(String[] args) {
         Mesa mesa = new Mesa();
-        Filosofo f1 = new Filosofo("[Platón]", mesa.getTenedor1(), mesa.getTenedor2(), 1);
+        Filosofo f1 = new Filosofo("[Platon]", mesa.getTenedor1(), mesa.getTenedor2(), 1);
         Filosofo f2 = new Filosofo("[Descartes]", mesa.getTenedor2(), mesa.getTenedor3(), 1);
         Filosofo f3 = new Filosofo("[Rousseau]", mesa.getTenedor3(), mesa.getTenedor4(), 1);
         Filosofo f4 = new Filosofo("[Bertrand]", mesa.getTenedor4(), mesa.getTenedor5(), 1);

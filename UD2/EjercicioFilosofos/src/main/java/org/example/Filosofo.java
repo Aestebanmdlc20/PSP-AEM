@@ -27,8 +27,8 @@ class Filosofo implements Runnable {
                     }
                 }
                 pensar();
-            } if (this.tenedorInstruccion == 2) {
-                synchronized (tenedorIzquierdo){
+            } else if (this.tenedorInstruccion == 2) {
+                synchronized (tenedorIzquierdo) {
                     tomarTenedor("izquierdo");
                     synchronized (tenedorDerecho) {
                         tomarTenedor("derecho");
@@ -38,21 +38,6 @@ class Filosofo implements Runnable {
                 }
                 pensar();
             }
-            synchronized (tenedorDerecho) {
-                tomarTenedor("derecho");
-                synchronized (tenedorIzquierdo) {
-                    tomarTenedor("izquierdo");
-                    comer();
-                }
-            }
-            synchronized (tenedorIzquierdo){
-                tomarTenedor("izquierdo");
-                synchronized (tenedorDerecho) {
-                    tomarTenedor("derecho");
-                    comer();
-                }
-            }
-            pensar();
         }
     }
 
@@ -68,7 +53,7 @@ class Filosofo implements Runnable {
 
     public void tomarTenedor(String tenedor) {
         try {
-            System.out.println(idFilosofo + " toma su tenedor " + tenedor);
+            System.out.println(idFilosofo + " coge su tenedor " + tenedor);
             int pausa = (int) (Math.random() * 3000);
             Thread.sleep(pausa);
         } catch (InterruptedException ex) {
