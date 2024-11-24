@@ -1,27 +1,27 @@
-public class Cliente extends Thread{
-
+public class Cliente extends Thread {
     private GestorSillas gestorSillas;
 
-    public Cliente(GestorSillas gestorSillas, String nombre){
-        this.setName(nombre);
+    public Cliente(GestorSillas gestorSillas, int numCliente) {
         this.gestorSillas = gestorSillas;
+        this.setName("Cliente " + numCliente);
     }
 
-    public void run(){
+    @Override
+    public void run() {
         int posSilla = this.gestorSillas.ocupaSilla(this.getName());
-        if(posSilla == -1){
-            System.out.println("El cliente " + this.getName() + " no ha encontrado silla libre");
-        } else{
-            while(gestorSillas.estaSillaOcupada(posSilla, this.getName())){
-                System.out.println("El cliente " + this.getName() + " se ha sentado en la silla " + posSilla);
+        if (posSilla == -1) {
+            System.out.println(this.getName() + " no había sillas libres, me marcho");
+        } else {
+            // Esperar a terminar
+            while (gestorSillas.estaSillaOcupada(posSilla, this.getName())) {
+                System.out.println(this.getName() + " estoy sentado en la silla: " + posSilla);
                 try {
-                    Thread.sleep(250);
+                    Thread.currentThread().sleep(250);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
             }
-            System.out.println("El cliente " + this.getName() + " ha sido atendido y se marcha");
+            System.out.println(this.getName() + " he sido atendido, me marcho");
         }
     }
-
 }

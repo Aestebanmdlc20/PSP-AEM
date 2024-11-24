@@ -1,21 +1,21 @@
-public class Barbero extends Thread{
-    private GestorSillas gestorSillas;
-    boolean barberoAbierta = true;
-    public Barbero(GestorSillas gestorSillas, int numBarbero){
+public class Barbero extends Thread {
+    GestorSillas gestorSillas;
+    boolean barberiaAbierta;
+
+    public Barbero(GestorSillas gestorSillas, int numBarbero) {
         this.gestorSillas = gestorSillas;
-        barberoAbierta = true;
+        this.barberiaAbierta = true;
         this.setName("Barbero " + numBarbero);
     }
 
     @Override
-    public void run(){
-        while(!isInterrupted()){
-            try{
+    public void run() {
+        while (!isInterrupted()) {
+            try {
                 this.gestorSillas.atenderCliente(this.getName());
-            } catch (InterruptedException ex){
+            } catch (InterruptedException e) {
                 this.interrupt();
             }
         }
     }
-
 }

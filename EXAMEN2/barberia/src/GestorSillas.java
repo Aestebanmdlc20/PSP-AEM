@@ -7,27 +7,25 @@ public class GestorSillas {
     public GestorSillas(int numSillas){
         this.numSillas = numSillas;
         sillas = new String[numSillas];
-
-        for (int i = 0; i < sillas.length; i++) {
+        
+        for (int i = 0; i < numSillas; i++) {
             sillas[i] = null;
         }
-
     }
 
     private synchronized int getSillaLibre(){
         int pos = -1;
-        boolean booContinuar=false;
-        for(int i = 0; i < sillas.length && !booContinuar; i++){
+        boolean booContinuar = true;
+        for(int i = 0; i < sillas.length && booContinuar; i++){
             if(sillas[i] == null){
                 pos = i;
-                booContinuar=true;
+                booContinuar = false;
             }
         }
         return pos;
     }
 
     public synchronized int ocupaSilla(String nombre){
-
         int sillaLibre = getSillaLibre();
         if(sillaLibre != -1){
             System.out.println("El cliente " + nombre + " se ha sentado en la silla " + sillaLibre);
@@ -38,23 +36,24 @@ public class GestorSillas {
 
     private synchronized int getSillaOcupada(){
         int pos = -1;
-        boolean booContinuar=false;
-        for(int i = 0; i < sillas.length && !booContinuar; i++){
+        boolean booContinuar = true;
+        for(int i = 0; i < sillas.length && booContinuar; i++){
             if(sillas[i] != null){
                 pos = i;
-                booContinuar=true;
+                booContinuar = false;
             }
         }
         return pos;
     }
 
-    public synchronized void atenderCliente (String nombreBarbero){
+    public synchronized void atenderCliente (String nombreBarbero) throws InterruptedException {
 
         int sillaOcupada = getSillaOcupada();
         if (sillaOcupada != -1){
             System.out.println("El barbero " + nombreBarbero + " esta atendiendo al cliente " + sillas[sillaOcupada] + " en la silla " + sillaOcupada);
+            // Liberar la silla
             sillas[sillaOcupada] = null;
-            System.out.println("Silla " + sillaOcupada + " liberada");
+            System.out.println("Silla " + sillaOcupada + " liberada" + " por el barbero " + nombreBarbero);
         }
     }
 
