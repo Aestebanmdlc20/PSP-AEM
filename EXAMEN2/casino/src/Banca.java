@@ -1,23 +1,54 @@
 public class Banca extends Thread{
 
+    private static final int SALDO_INICIAL = 1000;
+
     private int saldo;
 
+    private int numeroGanador;
+
     public Banca(){
-        this.saldo = 1000;
+        this.saldo = SALDO_INICIAL;
+    }
+
+    public synchronized void indicarNumeroGanador(int numeroGanador){
+        this.numeroGanador = numeroGanador;
+        notifyAll();
+    }
+
+    public synchronized void recibirApuesta(int cantidadApostada){
+        this.saldo += cantidadApostada;
     }
 
     public synchronized int getSaldo(){
         return saldo;
     }
 
-    public synchronized void restarSaldo(int cantidadApostada){
-        if(cantidadApostada < saldo){
-            this.saldo -= cantidadApostada;
+    public synchronized boolean pagar(int cantidad){
+        boolean booPagar = false;
+        if ((saldo - cantidad) >= 0){
+            saldo = saldo - cantidad;
+            booPagar = true;
         }
+        return booPagar;
     }
 
+    public synchronized void comprobarResultado(Jugador jugador) throws InterruptedException {
+        this.wait();
 
-    public synchronized void aumentarSaldo(int cantidadApostada){
-        this.saldo += cantidadApostada;
+        if(jugador.getNumeroApostado() == numeroGanador){
+            int ganancia = Jugador.APUESTA_GANADA;
+
+            if(pagar(ganancia)){
+                jugador.incrementarSaldo(ganancia);
+                System.out.println("El jugador " + jugador.getName() + " ha ganado " + ganancia + "€" + " [Saldo: " + jugador.getSaldo() + "€]");
+            }
+            else{
+                System.out.println("La banca no tiene suficiente saldo para pagar al jugador " + jugador.getName());
+            }
+
+        } else {
+            System.out.println("El jugador " + jugador.getName() + " ha perdido " + Jugador.APUESTA + "€" + " [Saldo: " + jugador.getSaldo() + "€]");
+        }
+
     }
 }
