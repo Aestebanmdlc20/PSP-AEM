@@ -7,7 +7,7 @@ public class GestorSillas {
     public GestorSillas(int numSillas){
         this.numSillas = numSillas;
         sillas = new String[numSillas];
-        
+
         for (int i = 0; i < numSillas; i++) {
             sillas[i] = null;
         }
