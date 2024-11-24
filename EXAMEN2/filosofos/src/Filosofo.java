@@ -1,0 +1,2 @@
+public class Filosofo {
+}
